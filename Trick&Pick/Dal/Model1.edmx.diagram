@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="04733b33077044d8bf1c9720d2f1d9dc" Name="Diagram1">
+        <EntityTypeShape EntityType="SmartMatchModel.ApprenticeTbl" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.AreaTbl" Width="1.5" PointX="3.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.CharacterizationConstraintApprenticeTbl" Width="1.5" PointX="10.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.CharacterizationConstraintsTbl" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.CityTbl" Width="1.5" PointX="1.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.ConstraintTbl" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.PattrenConstaraintTbl" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.PlacementTbl" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.PreferenceApprenticeTbl" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.PreferenceTbl" Width="1.5" PointX="6" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.PreferenceTutorTbl" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.TutorCharacterizationConstraintTbl" Width="1.5" PointX="7.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.TutorForApprenticeTbl" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.TutorTbl" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartMatchModel.UserTbl" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SmartMatchModel.FK_ApprenticeTbl_AreaTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_ApprenticeTbl_CityTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_ApprenticeTbl_PlacementTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_CharacterizationConstraintApprenticeTbl_ApprenticeTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_PreferenceApprenticeTbl_ApprenticeTbl1" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_AreaTbl_CityTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_TutorTbl_AreaTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_CharacterizationConstraintApprenticeTbl_CharacterizationConstraintsTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_CharacterizationConstraintsTbl_ConstraintTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_TutorCharacterizationConstraintTbl_CharacterizationConstraintsTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_TutorTbl_CityTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_TutorTbl_CityTbl1" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_ConstraintTbl_PlacementTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_TutorForApprenticeTbl_PlacementTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_TutorForApprenticeTbl_PlacementTbl1" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_TutorTbl_PlacementTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_PreferenceApprenticeTbl_PreferenceTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_PreferenceTutorTbl_PreferenceTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_PreferenceTutorTbl_TutorTbl" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartMatchModel.FK_TutorCharacterizationConstraintTbl_TutorTbl" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

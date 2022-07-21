@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Dto.ApprenticeDto" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAABAAAAQAAAAAIAAAgIAAAAACAAIAAAAAAAAAA=</HashCode>
+      <FileName>ApprenticeDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.AreaDto" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAUAAAAAAAAAAIAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>AreaDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.CharacterizationConstraintApprenticeDto" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAEAAAAQAAAAAIAAAAIAAAAAIAAAAAAgAAAAAA=</HashCode>
+      <FileName>CharacterizationConstraintApprenticeDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.CharacterizationConstraintApprenticeTblDto" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterizationConstraintApprenticeTblDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.CityDto" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABIAAAQAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CityDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.Class1Dto" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class1Dto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.ConstraintDto" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAQAAAAAQAAAgIAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>ConstraintDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.PlacementDto" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlacementDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.PreferenceApprenticeDto" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAABQAAAAAIAAAAIAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>PreferenceApprenticeDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.PreferenceDto" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAIAAAAAAAAAIAAAAAAABA=</HashCode>
+      <FileName>PreferenceDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.PreferenceTutorDto" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAEAAAAQAAAAAAAAAAIABAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>PreferenceTutorDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.TutorCharacterizationConstraintDto" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAAAAQAAAAAAAAAAIAAAAAIAQAAAAAAAABAA=</HashCode>
+      <FileName>TutorCharacterizationConstraintDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.TutorDto" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAQAAAAAAAAQgIABAAAAAAIAQAAAAQAAA=</HashCode>
+      <FileName>TutorDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.TutorForApprenticeDto" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAEAQAAAAAIAAAAIAFAAABAAAAAAAAAQAAA=</HashCode>
+      <FileName>TutorForApprenticeDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dto.UserDto" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

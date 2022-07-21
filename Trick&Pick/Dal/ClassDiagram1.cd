@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Dal.Class1" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.SmartMatchEntities1" Collapsed="true">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAIABJAAAAAhBAABAAACQEAIEEgEAiAAAAEAEIAQAAA=</HashCode>
+      <FileName>Model1.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.ApprenticeTbl" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIABAEAAAAABAAIAAEgAAAEAAiACIAEAAAAAAAA=</HashCode>
+      <FileName>ApprenticeTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.AreaTbl" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAEAAAAAAAAAAAAEAAACAAIAAAAAAQAAA=</HashCode>
+      <FileName>AreaTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.CharacterizationConstraintApprenticeTbl" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAABAAEAAAAAAAAAAIAAAAAAAgAAIAAAAAAgAAQAAA=</HashCode>
+      <FileName>CharacterizationConstraintApprenticeTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.CharacterizationConstraintsTbl" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAABAAAAAAAAAAIAAwAAoAAAAAgAAAAAAA=</HashCode>
+      <FileName>CharacterizationConstraintsTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.CityTbl" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABIAAAAAABAAAAAAAAAEAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>CityTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.ConstraintTbl" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAABIAAAAAABAAAAAQAAAgIAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConstraintTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.PattrenConstaraintTbl" Collapsed="true">
+    <Position X="2.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAIBAEAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>PattrenConstaraintTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.PlacementTbl" Collapsed="true">
+    <Position X="5.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAEAAAAAAAAAAAAAoEoAAAABAAAAAAAwAAA=</HashCode>
+      <FileName>PlacementTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.PreferenceApprenticeTbl" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAABAAAAAAIAAAAAAAAAAAAAAAAAAIAQABA=</HashCode>
+      <FileName>PreferenceApprenticeTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.PreferenceTbl" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAIAAAAAQABA=</HashCode>
+      <FileName>PreferenceTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.PreferenceTutorTbl" Collapsed="true">
+    <Position X="4" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAEAAAAAAAAAAAAAAAAAFAAAAAAAAAAAIAAABA=</HashCode>
+      <FileName>PreferenceTutorTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.sp_helpdiagramdefinition_Result" Collapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>sp_helpdiagramdefinition_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.sp_helpdiagrams_Result" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAEAAiAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>sp_helpdiagrams_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.sysdiagrams" Collapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAQAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>sysdiagrams.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.TutorCharacterizationConstraintTbl" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgAEAAAAAAAAAAAAAAAAAEgAAIAQAAAAAAAABAA=</HashCode>
+      <FileName>TutorCharacterizationConstraintTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.TutorForApprenticeTbl" Collapsed="true">
+    <Position X="7.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAEAgAAAAAIAAAAAABAAABAAAAQAAAAAAAA=</HashCode>
+      <FileName>TutorForApprenticeTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.TutorTbl" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIABAAAABAABAAAAAAgAABEAACAAIAUAAAAQAAA=</HashCode>
+      <FileName>TutorTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dal.UserTbl" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAEAAAAACAQAAAAAQAAA=</HashCode>
+      <FileName>UserTbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

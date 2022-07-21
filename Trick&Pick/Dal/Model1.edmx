@@ -1,0 +1,1181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SmartMatchModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ApprenticeTbl">
+          <Key>
+            <PropertyRef Name="ApprenticeID" />
+          </Key>
+          <Property Name="ApprenticeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApprenticeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlacementId" Type="int" />
+          <Property Name="AreaID" Type="int" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="ApprenticePhone" Type="nchar" MaxLength="10" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="ApprenticeAga" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AreaTbl">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterizationConstraintApprenticeTbl">
+          <Key>
+            <PropertyRef Name="ApprenticeCharacterizationConstraintId" />
+          </Key>
+          <Property Name="ApprenticeCharacterizationConstraintId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApprenticeId" Type="int" Nullable="false" />
+          <Property Name="CharacterizationConstraintId" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="CharacterizationConstraintsTbl">
+          <Key>
+            <PropertyRef Name="CharacterizationConstraintsId" />
+          </Key>
+          <Property Name="CharacterizationConstraintsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConstarintId" Type="int" Nullable="false" />
+          <Property Name="IsOpposit" Type="bit" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CityTbl">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ConstraintTbl">
+          <Key>
+            <PropertyRef Name="ConstraintID" />
+          </Key>
+          <Property Name="ConstraintID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConstraintName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Placement" Type="int" />
+        </EntityType>
+        <EntityType Name="PattrenConstaraintTbl">
+          <Key>
+            <PropertyRef Name="ConstraintPatternId" />
+          </Key>
+          <Property Name="ConstraintPatternId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConstarintId" Type="int" Nullable="false" />
+          <Property Name="ConstraintPatternType" Type="int" />
+        </EntityType>
+        <EntityType Name="PlacementTbl">
+          <Key>
+            <PropertyRef Name="PlacementID" />
+          </Key>
+          <Property Name="PlacementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlacementName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+          <Property Name="NumberOfCandidatesForApprentice" Type="int" />
+          <Property Name="NumberOfCandidatesForTutor" Type="int" />
+        </EntityType>
+        <EntityType Name="PreferenceApprenticeTbl">
+          <Key>
+            <PropertyRef Name="PreferenceApprenticeID" />
+          </Key>
+          <Property Name="PreferenceApprenticeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PreferenceID" Type="int" Nullable="false" />
+          <Property Name="ApprenticeID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="PreferenceTbl">
+          <Key>
+            <PropertyRef Name="PreferenceID" />
+          </Key>
+          <Property Name="PreferenceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PreferenceName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PreferenceTutorTbl">
+          <Key>
+            <PropertyRef Name="PreferenceForTutorID" />
+          </Key>
+          <Property Name="PreferenceForTutorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PreferenceID" Type="int" Nullable="false" />
+          <Property Name="TutorID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="TutorCharacterizationConstraintTbl">
+          <Key>
+            <PropertyRef Name="TutorCharacterizationConstraintId" />
+          </Key>
+          <Property Name="TutorCharacterizationConstraintId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CharacterizationConstarintId" Type="int" Nullable="false" />
+          <Property Name="TutorId" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="TutorForApprenticeTbl">
+          <Key>
+            <PropertyRef Name="TutorForApprenticeId" />
+          </Key>
+          <Property Name="TutorForApprenticeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlacementID" Type="int" />
+          <Property Name="TutorID" Type="int" />
+          <Property Name="ApprenticeID" Type="int" />
+          <Property Name="MatchLevelScore" Type="int" />
+        </EntityType>
+        <EntityType Name="TutorTbl">
+          <Key>
+            <PropertyRef Name="TutorID" />
+          </Key>
+          <Property Name="TutorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlacementId" Type="int" Nullable="false" />
+          <Property Name="TutorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TutorAge" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TutorPhone" Type="nchar" MaxLength="10" />
+          <Property Name="AreaID" Type="int" Nullable="false" />
+          <Property Name="PasswordID" Type="varchar" MaxLength="50" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserTbl">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_ApprenticeTbl_AreaTbl">
+          <End Role="AreaTbl" Type="Self.AreaTbl" Multiplicity="1" />
+          <End Role="ApprenticeTbl" Type="Self.ApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AreaTbl">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="ApprenticeTbl">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApprenticeTbl_CityTbl">
+          <End Role="CityTbl" Type="Self.CityTbl" Multiplicity="1" />
+          <End Role="ApprenticeTbl" Type="Self.ApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityTbl">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="ApprenticeTbl">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApprenticeTbl_PlacementTbl">
+          <End Role="PlacementTbl" Type="Self.PlacementTbl" Multiplicity="0..1" />
+          <End Role="ApprenticeTbl" Type="Self.ApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacementTbl">
+              <PropertyRef Name="PlacementID" />
+            </Principal>
+            <Dependent Role="ApprenticeTbl">
+              <PropertyRef Name="PlacementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AreaTbl_CityTbl">
+          <End Role="CityTbl" Type="Self.CityTbl" Multiplicity="1" />
+          <End Role="AreaTbl" Type="Self.AreaTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityTbl">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="AreaTbl">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CharacterizationConstraintApprenticeTbl_ApprenticeTbl">
+          <End Role="ApprenticeTbl" Type="Self.ApprenticeTbl" Multiplicity="1" />
+          <End Role="CharacterizationConstraintApprenticeTbl" Type="Self.CharacterizationConstraintApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApprenticeTbl">
+              <PropertyRef Name="ApprenticeID" />
+            </Principal>
+            <Dependent Role="CharacterizationConstraintApprenticeTbl">
+              <PropertyRef Name="ApprenticeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CharacterizationConstraintApprenticeTbl_CharacterizationConstraintsTbl">
+          <End Role="CharacterizationConstraintsTbl" Type="Self.CharacterizationConstraintsTbl" Multiplicity="1" />
+          <End Role="CharacterizationConstraintApprenticeTbl" Type="Self.CharacterizationConstraintApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterizationConstraintsTbl">
+              <PropertyRef Name="CharacterizationConstraintsId" />
+            </Principal>
+            <Dependent Role="CharacterizationConstraintApprenticeTbl">
+              <PropertyRef Name="CharacterizationConstraintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CharacterizationConstraintsTbl_ConstraintTbl">
+          <End Role="ConstraintTbl" Type="Self.ConstraintTbl" Multiplicity="1" />
+          <End Role="CharacterizationConstraintsTbl" Type="Self.CharacterizationConstraintsTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConstraintTbl">
+              <PropertyRef Name="ConstraintID" />
+            </Principal>
+            <Dependent Role="CharacterizationConstraintsTbl">
+              <PropertyRef Name="ConstarintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConstraintTbl_PlacementTbl">
+          <End Role="PlacementTbl" Type="Self.PlacementTbl" Multiplicity="0..1" />
+          <End Role="ConstraintTbl" Type="Self.ConstraintTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacementTbl">
+              <PropertyRef Name="PlacementID" />
+            </Principal>
+            <Dependent Role="ConstraintTbl">
+              <PropertyRef Name="Placement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PreferenceApprenticeTbl_ApprenticeTbl1">
+          <End Role="ApprenticeTbl" Type="Self.ApprenticeTbl" Multiplicity="1" />
+          <End Role="PreferenceApprenticeTbl" Type="Self.PreferenceApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApprenticeTbl">
+              <PropertyRef Name="ApprenticeID" />
+            </Principal>
+            <Dependent Role="PreferenceApprenticeTbl">
+              <PropertyRef Name="ApprenticeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PreferenceApprenticeTbl_PreferenceTbl">
+          <End Role="PreferenceTbl" Type="Self.PreferenceTbl" Multiplicity="1" />
+          <End Role="PreferenceApprenticeTbl" Type="Self.PreferenceApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PreferenceTbl">
+              <PropertyRef Name="PreferenceID" />
+            </Principal>
+            <Dependent Role="PreferenceApprenticeTbl">
+              <PropertyRef Name="PreferenceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PreferenceTutorTbl_PreferenceTbl">
+          <End Role="PreferenceTbl" Type="Self.PreferenceTbl" Multiplicity="1" />
+          <End Role="PreferenceTutorTbl" Type="Self.PreferenceTutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PreferenceTbl">
+              <PropertyRef Name="PreferenceID" />
+            </Principal>
+            <Dependent Role="PreferenceTutorTbl">
+              <PropertyRef Name="PreferenceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PreferenceTutorTbl_TutorTbl">
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="1" />
+          <End Role="PreferenceTutorTbl" Type="Self.PreferenceTutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TutorTbl">
+              <PropertyRef Name="TutorID" />
+            </Principal>
+            <Dependent Role="PreferenceTutorTbl">
+              <PropertyRef Name="TutorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorCharacterizationConstraintTbl_CharacterizationConstraintsTbl">
+          <End Role="CharacterizationConstraintsTbl" Type="Self.CharacterizationConstraintsTbl" Multiplicity="1" />
+          <End Role="TutorCharacterizationConstraintTbl" Type="Self.TutorCharacterizationConstraintTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterizationConstraintsTbl">
+              <PropertyRef Name="CharacterizationConstraintsId" />
+            </Principal>
+            <Dependent Role="TutorCharacterizationConstraintTbl">
+              <PropertyRef Name="CharacterizationConstarintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorCharacterizationConstraintTbl_TutorTbl">
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="1" />
+          <End Role="TutorCharacterizationConstraintTbl" Type="Self.TutorCharacterizationConstraintTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TutorTbl">
+              <PropertyRef Name="TutorID" />
+            </Principal>
+            <Dependent Role="TutorCharacterizationConstraintTbl">
+              <PropertyRef Name="TutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorForApprenticeTbl_PlacementTbl">
+          <End Role="PlacementTbl" Type="Self.PlacementTbl" Multiplicity="0..1" />
+          <End Role="TutorForApprenticeTbl" Type="Self.TutorForApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacementTbl">
+              <PropertyRef Name="PlacementID" />
+            </Principal>
+            <Dependent Role="TutorForApprenticeTbl">
+              <PropertyRef Name="PlacementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorForApprenticeTbl_PlacementTbl1">
+          <End Role="PlacementTbl" Type="Self.PlacementTbl" Multiplicity="0..1" />
+          <End Role="TutorForApprenticeTbl" Type="Self.TutorForApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacementTbl">
+              <PropertyRef Name="PlacementID" />
+            </Principal>
+            <Dependent Role="TutorForApprenticeTbl">
+              <PropertyRef Name="PlacementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorTbl_AreaTbl">
+          <End Role="AreaTbl" Type="Self.AreaTbl" Multiplicity="1" />
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AreaTbl">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="TutorTbl">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorTbl_CityTbl">
+          <End Role="CityTbl" Type="Self.CityTbl" Multiplicity="1" />
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityTbl">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="TutorTbl">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorTbl_CityTbl1">
+          <End Role="CityTbl" Type="Self.CityTbl" Multiplicity="1" />
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityTbl">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="TutorTbl">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorTbl_PlacementTbl">
+          <End Role="PlacementTbl" Type="Self.PlacementTbl" Multiplicity="1" />
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacementTbl">
+              <PropertyRef Name="PlacementID" />
+            </Principal>
+            <Dependent Role="TutorTbl">
+              <PropertyRef Name="PlacementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SmartMatchModelStoreContainer">
+          <EntitySet Name="ApprenticeTbl" EntityType="Self.ApprenticeTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AreaTbl" EntityType="Self.AreaTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterizationConstraintApprenticeTbl" EntityType="Self.CharacterizationConstraintApprenticeTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterizationConstraintsTbl" EntityType="Self.CharacterizationConstraintsTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CityTbl" EntityType="Self.CityTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ConstraintTbl" EntityType="Self.ConstraintTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PattrenConstaraintTbl" EntityType="Self.PattrenConstaraintTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlacementTbl" EntityType="Self.PlacementTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PreferenceApprenticeTbl" EntityType="Self.PreferenceApprenticeTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PreferenceTbl" EntityType="Self.PreferenceTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PreferenceTutorTbl" EntityType="Self.PreferenceTutorTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TutorCharacterizationConstraintTbl" EntityType="Self.TutorCharacterizationConstraintTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TutorForApprenticeTbl" EntityType="Self.TutorForApprenticeTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TutorTbl" EntityType="Self.TutorTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTbl" EntityType="Self.UserTbl" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ApprenticeTbl_AreaTbl" Association="Self.FK_ApprenticeTbl_AreaTbl">
+            <End Role="AreaTbl" EntitySet="AreaTbl" />
+            <End Role="ApprenticeTbl" EntitySet="ApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApprenticeTbl_CityTbl" Association="Self.FK_ApprenticeTbl_CityTbl">
+            <End Role="CityTbl" EntitySet="CityTbl" />
+            <End Role="ApprenticeTbl" EntitySet="ApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApprenticeTbl_PlacementTbl" Association="Self.FK_ApprenticeTbl_PlacementTbl">
+            <End Role="PlacementTbl" EntitySet="PlacementTbl" />
+            <End Role="ApprenticeTbl" EntitySet="ApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AreaTbl_CityTbl" Association="Self.FK_AreaTbl_CityTbl">
+            <End Role="CityTbl" EntitySet="CityTbl" />
+            <End Role="AreaTbl" EntitySet="AreaTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterizationConstraintApprenticeTbl_ApprenticeTbl" Association="Self.FK_CharacterizationConstraintApprenticeTbl_ApprenticeTbl">
+            <End Role="ApprenticeTbl" EntitySet="ApprenticeTbl" />
+            <End Role="CharacterizationConstraintApprenticeTbl" EntitySet="CharacterizationConstraintApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterizationConstraintApprenticeTbl_CharacterizationConstraintsTbl" Association="Self.FK_CharacterizationConstraintApprenticeTbl_CharacterizationConstraintsTbl">
+            <End Role="CharacterizationConstraintsTbl" EntitySet="CharacterizationConstraintsTbl" />
+            <End Role="CharacterizationConstraintApprenticeTbl" EntitySet="CharacterizationConstraintApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterizationConstraintsTbl_ConstraintTbl" Association="Self.FK_CharacterizationConstraintsTbl_ConstraintTbl">
+            <End Role="ConstraintTbl" EntitySet="ConstraintTbl" />
+            <End Role="CharacterizationConstraintsTbl" EntitySet="CharacterizationConstraintsTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConstraintTbl_PlacementTbl" Association="Self.FK_ConstraintTbl_PlacementTbl">
+            <End Role="PlacementTbl" EntitySet="PlacementTbl" />
+            <End Role="ConstraintTbl" EntitySet="ConstraintTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreferenceApprenticeTbl_ApprenticeTbl1" Association="Self.FK_PreferenceApprenticeTbl_ApprenticeTbl1">
+            <End Role="ApprenticeTbl" EntitySet="ApprenticeTbl" />
+            <End Role="PreferenceApprenticeTbl" EntitySet="PreferenceApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreferenceApprenticeTbl_PreferenceTbl" Association="Self.FK_PreferenceApprenticeTbl_PreferenceTbl">
+            <End Role="PreferenceTbl" EntitySet="PreferenceTbl" />
+            <End Role="PreferenceApprenticeTbl" EntitySet="PreferenceApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreferenceTutorTbl_PreferenceTbl" Association="Self.FK_PreferenceTutorTbl_PreferenceTbl">
+            <End Role="PreferenceTbl" EntitySet="PreferenceTbl" />
+            <End Role="PreferenceTutorTbl" EntitySet="PreferenceTutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreferenceTutorTbl_TutorTbl" Association="Self.FK_PreferenceTutorTbl_TutorTbl">
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+            <End Role="PreferenceTutorTbl" EntitySet="PreferenceTutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorCharacterizationConstraintTbl_CharacterizationConstraintsTbl" Association="Self.FK_TutorCharacterizationConstraintTbl_CharacterizationConstraintsTbl">
+            <End Role="CharacterizationConstraintsTbl" EntitySet="CharacterizationConstraintsTbl" />
+            <End Role="TutorCharacterizationConstraintTbl" EntitySet="TutorCharacterizationConstraintTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorCharacterizationConstraintTbl_TutorTbl" Association="Self.FK_TutorCharacterizationConstraintTbl_TutorTbl">
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+            <End Role="TutorCharacterizationConstraintTbl" EntitySet="TutorCharacterizationConstraintTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorForApprenticeTbl_PlacementTbl" Association="Self.FK_TutorForApprenticeTbl_PlacementTbl">
+            <End Role="PlacementTbl" EntitySet="PlacementTbl" />
+            <End Role="TutorForApprenticeTbl" EntitySet="TutorForApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorForApprenticeTbl_PlacementTbl1" Association="Self.FK_TutorForApprenticeTbl_PlacementTbl1">
+            <End Role="PlacementTbl" EntitySet="PlacementTbl" />
+            <End Role="TutorForApprenticeTbl" EntitySet="TutorForApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorTbl_AreaTbl" Association="Self.FK_TutorTbl_AreaTbl">
+            <End Role="AreaTbl" EntitySet="AreaTbl" />
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorTbl_CityTbl" Association="Self.FK_TutorTbl_CityTbl">
+            <End Role="CityTbl" EntitySet="CityTbl" />
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorTbl_CityTbl1" Association="Self.FK_TutorTbl_CityTbl1">
+            <End Role="CityTbl" EntitySet="CityTbl" />
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorTbl_PlacementTbl" Association="Self.FK_TutorTbl_PlacementTbl">
+            <End Role="PlacementTbl" EntitySet="PlacementTbl" />
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SmartMatchModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ApprenticeTbl">
+          <Key>
+            <PropertyRef Name="ApprenticeID" />
+          </Key>
+          <Property Name="ApprenticeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApprenticeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlacementId" Type="Int32" />
+          <Property Name="AreaID" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprenticePhone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <Property Name="ApprenticeAga" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="AreaTbl" Relationship="Self.FK_ApprenticeTbl_AreaTbl" FromRole="ApprenticeTbl" ToRole="AreaTbl" />
+          <NavigationProperty Name="CityTbl" Relationship="Self.FK_ApprenticeTbl_CityTbl" FromRole="ApprenticeTbl" ToRole="CityTbl" />
+          <NavigationProperty Name="PlacementTbl" Relationship="Self.FK_ApprenticeTbl_PlacementTbl" FromRole="ApprenticeTbl" ToRole="PlacementTbl" />
+          <NavigationProperty Name="CharacterizationConstraintApprenticeTbl" Relationship="Self.FK_CharacterizationConstraintApprenticeTbl_ApprenticeTbl" FromRole="ApprenticeTbl" ToRole="CharacterizationConstraintApprenticeTbl" />
+          <NavigationProperty Name="PreferenceApprenticeTbl" Relationship="Self.FK_PreferenceApprenticeTbl_ApprenticeTbl1" FromRole="ApprenticeTbl" ToRole="PreferenceApprenticeTbl" />
+        </EntityType>
+        <EntityType Name="AreaTbl">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ApprenticeTbl" Relationship="Self.FK_ApprenticeTbl_AreaTbl" FromRole="AreaTbl" ToRole="ApprenticeTbl" />
+          <NavigationProperty Name="CityTbl" Relationship="Self.FK_AreaTbl_CityTbl" FromRole="AreaTbl" ToRole="CityTbl" />
+          <NavigationProperty Name="TutorTbl" Relationship="Self.FK_TutorTbl_AreaTbl" FromRole="AreaTbl" ToRole="TutorTbl" />
+        </EntityType>
+        <EntityType Name="CharacterizationConstraintApprenticeTbl">
+          <Key>
+            <PropertyRef Name="ApprenticeCharacterizationConstraintId" />
+          </Key>
+          <Property Name="ApprenticeCharacterizationConstraintId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApprenticeId" Type="Int32" Nullable="false" />
+          <Property Name="CharacterizationConstraintId" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="ApprenticeTbl" Relationship="Self.FK_CharacterizationConstraintApprenticeTbl_ApprenticeTbl" FromRole="CharacterizationConstraintApprenticeTbl" ToRole="ApprenticeTbl" />
+          <NavigationProperty Name="CharacterizationConstraintsTbl" Relationship="Self.FK_CharacterizationConstraintApprenticeTbl_CharacterizationConstraintsTbl" FromRole="CharacterizationConstraintApprenticeTbl" ToRole="CharacterizationConstraintsTbl" />
+        </EntityType>
+        <EntityType Name="CharacterizationConstraintsTbl">
+          <Key>
+            <PropertyRef Name="CharacterizationConstraintsId" />
+          </Key>
+          <Property Name="CharacterizationConstraintsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConstarintId" Type="Int32" Nullable="false" />
+          <Property Name="IsOpposit" Type="Boolean" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CharacterizationConstraintApprenticeTbl" Relationship="Self.FK_CharacterizationConstraintApprenticeTbl_CharacterizationConstraintsTbl" FromRole="CharacterizationConstraintsTbl" ToRole="CharacterizationConstraintApprenticeTbl" />
+          <NavigationProperty Name="ConstraintTbl" Relationship="Self.FK_CharacterizationConstraintsTbl_ConstraintTbl" FromRole="CharacterizationConstraintsTbl" ToRole="ConstraintTbl" />
+          <NavigationProperty Name="TutorCharacterizationConstraintTbl" Relationship="Self.FK_TutorCharacterizationConstraintTbl_CharacterizationConstraintsTbl" FromRole="CharacterizationConstraintsTbl" ToRole="TutorCharacterizationConstraintTbl" />
+        </EntityType>
+        <EntityType Name="CityTbl">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ApprenticeTbl" Relationship="Self.FK_ApprenticeTbl_CityTbl" FromRole="CityTbl" ToRole="ApprenticeTbl" />
+          <NavigationProperty Name="AreaTbl" Relationship="Self.FK_AreaTbl_CityTbl" FromRole="CityTbl" ToRole="AreaTbl" />
+          <NavigationProperty Name="TutorTbl" Relationship="Self.FK_TutorTbl_CityTbl" FromRole="CityTbl" ToRole="TutorTbl" />
+          <NavigationProperty Name="TutorTbl1" Relationship="Self.FK_TutorTbl_CityTbl1" FromRole="CityTbl" ToRole="TutorTbl" />
+        </EntityType>
+        <EntityType Name="ConstraintTbl">
+          <Key>
+            <PropertyRef Name="ConstraintID" />
+          </Key>
+          <Property Name="ConstraintID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConstraintName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Placement" Type="Int32" />
+          <NavigationProperty Name="CharacterizationConstraintsTbl" Relationship="Self.FK_CharacterizationConstraintsTbl_ConstraintTbl" FromRole="ConstraintTbl" ToRole="CharacterizationConstraintsTbl" />
+          <NavigationProperty Name="PlacementTbl" Relationship="Self.FK_ConstraintTbl_PlacementTbl" FromRole="ConstraintTbl" ToRole="PlacementTbl" />
+        </EntityType>
+        <EntityType Name="PattrenConstaraintTbl">
+          <Key>
+            <PropertyRef Name="ConstraintPatternId" />
+          </Key>
+          <Property Name="ConstraintPatternId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConstarintId" Type="Int32" Nullable="false" />
+          <Property Name="ConstraintPatternType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PlacementTbl">
+          <Key>
+            <PropertyRef Name="PlacementID" />
+          </Key>
+          <Property Name="PlacementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlacementName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="NumberOfCandidatesForApprentice" Type="Int32" />
+          <Property Name="NumberOfCandidatesForTutor" Type="Int32" />
+          <NavigationProperty Name="ApprenticeTbl" Relationship="Self.FK_ApprenticeTbl_PlacementTbl" FromRole="PlacementTbl" ToRole="ApprenticeTbl" />
+          <NavigationProperty Name="ConstraintTbl" Relationship="Self.FK_ConstraintTbl_PlacementTbl" FromRole="PlacementTbl" ToRole="ConstraintTbl" />
+          <NavigationProperty Name="TutorForApprenticeTbl" Relationship="Self.FK_TutorForApprenticeTbl_PlacementTbl" FromRole="PlacementTbl" ToRole="TutorForApprenticeTbl" />
+          <NavigationProperty Name="TutorForApprenticeTbl1" Relationship="Self.FK_TutorForApprenticeTbl_PlacementTbl1" FromRole="PlacementTbl" ToRole="TutorForApprenticeTbl" />
+          <NavigationProperty Name="TutorTbl" Relationship="Self.FK_TutorTbl_PlacementTbl" FromRole="PlacementTbl" ToRole="TutorTbl" />
+        </EntityType>
+        <EntityType Name="PreferenceApprenticeTbl">
+          <Key>
+            <PropertyRef Name="PreferenceApprenticeID" />
+          </Key>
+          <Property Name="PreferenceApprenticeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PreferenceID" Type="Int32" Nullable="false" />
+          <Property Name="ApprenticeID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="ApprenticeTbl" Relationship="Self.FK_PreferenceApprenticeTbl_ApprenticeTbl1" FromRole="PreferenceApprenticeTbl" ToRole="ApprenticeTbl" />
+          <NavigationProperty Name="PreferenceTbl" Relationship="Self.FK_PreferenceApprenticeTbl_PreferenceTbl" FromRole="PreferenceApprenticeTbl" ToRole="PreferenceTbl" />
+        </EntityType>
+        <EntityType Name="PreferenceTbl">
+          <Key>
+            <PropertyRef Name="PreferenceID" />
+          </Key>
+          <Property Name="PreferenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PreferenceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PreferenceApprenticeTbl" Relationship="Self.FK_PreferenceApprenticeTbl_PreferenceTbl" FromRole="PreferenceTbl" ToRole="PreferenceApprenticeTbl" />
+          <NavigationProperty Name="PreferenceTutorTbl" Relationship="Self.FK_PreferenceTutorTbl_PreferenceTbl" FromRole="PreferenceTbl" ToRole="PreferenceTutorTbl" />
+        </EntityType>
+        <EntityType Name="PreferenceTutorTbl">
+          <Key>
+            <PropertyRef Name="PreferenceForTutorID" />
+          </Key>
+          <Property Name="PreferenceForTutorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PreferenceID" Type="Int32" Nullable="false" />
+          <Property Name="TutorID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="PreferenceTbl" Relationship="Self.FK_PreferenceTutorTbl_PreferenceTbl" FromRole="PreferenceTutorTbl" ToRole="PreferenceTbl" />
+          <NavigationProperty Name="TutorTbl" Relationship="Self.FK_PreferenceTutorTbl_TutorTbl" FromRole="PreferenceTutorTbl" ToRole="TutorTbl" />
+        </EntityType>
+        <EntityType Name="TutorCharacterizationConstraintTbl">
+          <Key>
+            <PropertyRef Name="TutorCharacterizationConstraintId" />
+          </Key>
+          <Property Name="TutorCharacterizationConstraintId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CharacterizationConstarintId" Type="Int32" Nullable="false" />
+          <Property Name="TutorId" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="CharacterizationConstraintsTbl" Relationship="Self.FK_TutorCharacterizationConstraintTbl_CharacterizationConstraintsTbl" FromRole="TutorCharacterizationConstraintTbl" ToRole="CharacterizationConstraintsTbl" />
+          <NavigationProperty Name="TutorTbl" Relationship="Self.FK_TutorCharacterizationConstraintTbl_TutorTbl" FromRole="TutorCharacterizationConstraintTbl" ToRole="TutorTbl" />
+        </EntityType>
+        <EntityType Name="TutorForApprenticeTbl">
+          <Key>
+            <PropertyRef Name="TutorForApprenticeId" />
+          </Key>
+          <Property Name="TutorForApprenticeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlacementID" Type="Int32" />
+          <Property Name="TutorID" Type="Int32" />
+          <Property Name="ApprenticeID" Type="Int32" />
+          <Property Name="MatchLevelScore" Type="Int32" />
+          <NavigationProperty Name="PlacementTbl" Relationship="Self.FK_TutorForApprenticeTbl_PlacementTbl" FromRole="TutorForApprenticeTbl" ToRole="PlacementTbl" />
+          <NavigationProperty Name="PlacementTbl1" Relationship="Self.FK_TutorForApprenticeTbl_PlacementTbl1" FromRole="TutorForApprenticeTbl" ToRole="PlacementTbl" />
+        </EntityType>
+        <EntityType Name="TutorTbl">
+          <Key>
+            <PropertyRef Name="TutorID" />
+          </Key>
+          <Property Name="TutorID" Type="Int32" Nullable="false" />
+          <Property Name="PlacementId" Type="Int32" Nullable="false" />
+          <Property Name="TutorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TutorAge" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TutorPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AreaID" Type="Int32" Nullable="false" />
+          <Property Name="PasswordID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AreaTbl" Relationship="Self.FK_TutorTbl_AreaTbl" FromRole="TutorTbl" ToRole="AreaTbl" />
+          <NavigationProperty Name="CityTbl" Relationship="Self.FK_TutorTbl_CityTbl" FromRole="TutorTbl" ToRole="CityTbl" />
+          <NavigationProperty Name="CityTbl1" Relationship="Self.FK_TutorTbl_CityTbl1" FromRole="TutorTbl" ToRole="CityTbl" />
+          <NavigationProperty Name="PlacementTbl" Relationship="Self.FK_TutorTbl_PlacementTbl" FromRole="TutorTbl" ToRole="PlacementTbl" />
+          <NavigationProperty Name="PreferenceTutorTbl" Relationship="Self.FK_PreferenceTutorTbl_TutorTbl" FromRole="TutorTbl" ToRole="PreferenceTutorTbl" />
+          <NavigationProperty Name="TutorCharacterizationConstraintTbl" Relationship="Self.FK_TutorCharacterizationConstraintTbl_TutorTbl" FromRole="TutorTbl" ToRole="TutorCharacterizationConstraintTbl" />
+        </EntityType>
+        <EntityType Name="UserTbl">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_ApprenticeTbl_AreaTbl">
+          <End Role="AreaTbl" Type="Self.AreaTbl" Multiplicity="1" />
+          <End Role="ApprenticeTbl" Type="Self.ApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AreaTbl">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="ApprenticeTbl">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApprenticeTbl_CityTbl">
+          <End Role="CityTbl" Type="Self.CityTbl" Multiplicity="1" />
+          <End Role="ApprenticeTbl" Type="Self.ApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityTbl">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="ApprenticeTbl">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApprenticeTbl_PlacementTbl">
+          <End Role="PlacementTbl" Type="Self.PlacementTbl" Multiplicity="0..1" />
+          <End Role="ApprenticeTbl" Type="Self.ApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacementTbl">
+              <PropertyRef Name="PlacementID" />
+            </Principal>
+            <Dependent Role="ApprenticeTbl">
+              <PropertyRef Name="PlacementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CharacterizationConstraintApprenticeTbl_ApprenticeTbl">
+          <End Role="ApprenticeTbl" Type="Self.ApprenticeTbl" Multiplicity="1" />
+          <End Role="CharacterizationConstraintApprenticeTbl" Type="Self.CharacterizationConstraintApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApprenticeTbl">
+              <PropertyRef Name="ApprenticeID" />
+            </Principal>
+            <Dependent Role="CharacterizationConstraintApprenticeTbl">
+              <PropertyRef Name="ApprenticeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PreferenceApprenticeTbl_ApprenticeTbl1">
+          <End Role="ApprenticeTbl" Type="Self.ApprenticeTbl" Multiplicity="1" />
+          <End Role="PreferenceApprenticeTbl" Type="Self.PreferenceApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApprenticeTbl">
+              <PropertyRef Name="ApprenticeID" />
+            </Principal>
+            <Dependent Role="PreferenceApprenticeTbl">
+              <PropertyRef Name="ApprenticeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AreaTbl_CityTbl">
+          <End Role="CityTbl" Type="Self.CityTbl" Multiplicity="1" />
+          <End Role="AreaTbl" Type="Self.AreaTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityTbl">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="AreaTbl">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorTbl_AreaTbl">
+          <End Role="AreaTbl" Type="Self.AreaTbl" Multiplicity="1" />
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AreaTbl">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="TutorTbl">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CharacterizationConstraintApprenticeTbl_CharacterizationConstraintsTbl">
+          <End Role="CharacterizationConstraintsTbl" Type="Self.CharacterizationConstraintsTbl" Multiplicity="1" />
+          <End Role="CharacterizationConstraintApprenticeTbl" Type="Self.CharacterizationConstraintApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterizationConstraintsTbl">
+              <PropertyRef Name="CharacterizationConstraintsId" />
+            </Principal>
+            <Dependent Role="CharacterizationConstraintApprenticeTbl">
+              <PropertyRef Name="CharacterizationConstraintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CharacterizationConstraintsTbl_ConstraintTbl">
+          <End Role="ConstraintTbl" Type="Self.ConstraintTbl" Multiplicity="1" />
+          <End Role="CharacterizationConstraintsTbl" Type="Self.CharacterizationConstraintsTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConstraintTbl">
+              <PropertyRef Name="ConstraintID" />
+            </Principal>
+            <Dependent Role="CharacterizationConstraintsTbl">
+              <PropertyRef Name="ConstarintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorCharacterizationConstraintTbl_CharacterizationConstraintsTbl">
+          <End Role="CharacterizationConstraintsTbl" Type="Self.CharacterizationConstraintsTbl" Multiplicity="1" />
+          <End Role="TutorCharacterizationConstraintTbl" Type="Self.TutorCharacterizationConstraintTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterizationConstraintsTbl">
+              <PropertyRef Name="CharacterizationConstraintsId" />
+            </Principal>
+            <Dependent Role="TutorCharacterizationConstraintTbl">
+              <PropertyRef Name="CharacterizationConstarintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorTbl_CityTbl">
+          <End Role="CityTbl" Type="Self.CityTbl" Multiplicity="1" />
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityTbl">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="TutorTbl">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorTbl_CityTbl1">
+          <End Role="CityTbl" Type="Self.CityTbl" Multiplicity="1" />
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityTbl">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="TutorTbl">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConstraintTbl_PlacementTbl">
+          <End Role="PlacementTbl" Type="Self.PlacementTbl" Multiplicity="0..1" />
+          <End Role="ConstraintTbl" Type="Self.ConstraintTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacementTbl">
+              <PropertyRef Name="PlacementID" />
+            </Principal>
+            <Dependent Role="ConstraintTbl">
+              <PropertyRef Name="Placement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorForApprenticeTbl_PlacementTbl">
+          <End Role="PlacementTbl" Type="Self.PlacementTbl" Multiplicity="0..1" />
+          <End Role="TutorForApprenticeTbl" Type="Self.TutorForApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacementTbl">
+              <PropertyRef Name="PlacementID" />
+            </Principal>
+            <Dependent Role="TutorForApprenticeTbl">
+              <PropertyRef Name="PlacementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorForApprenticeTbl_PlacementTbl1">
+          <End Role="PlacementTbl" Type="Self.PlacementTbl" Multiplicity="0..1" />
+          <End Role="TutorForApprenticeTbl" Type="Self.TutorForApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacementTbl">
+              <PropertyRef Name="PlacementID" />
+            </Principal>
+            <Dependent Role="TutorForApprenticeTbl">
+              <PropertyRef Name="PlacementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorTbl_PlacementTbl">
+          <End Role="PlacementTbl" Type="Self.PlacementTbl" Multiplicity="1" />
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacementTbl">
+              <PropertyRef Name="PlacementID" />
+            </Principal>
+            <Dependent Role="TutorTbl">
+              <PropertyRef Name="PlacementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PreferenceApprenticeTbl_PreferenceTbl">
+          <End Role="PreferenceTbl" Type="Self.PreferenceTbl" Multiplicity="1" />
+          <End Role="PreferenceApprenticeTbl" Type="Self.PreferenceApprenticeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PreferenceTbl">
+              <PropertyRef Name="PreferenceID" />
+            </Principal>
+            <Dependent Role="PreferenceApprenticeTbl">
+              <PropertyRef Name="PreferenceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PreferenceTutorTbl_PreferenceTbl">
+          <End Role="PreferenceTbl" Type="Self.PreferenceTbl" Multiplicity="1" />
+          <End Role="PreferenceTutorTbl" Type="Self.PreferenceTutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PreferenceTbl">
+              <PropertyRef Name="PreferenceID" />
+            </Principal>
+            <Dependent Role="PreferenceTutorTbl">
+              <PropertyRef Name="PreferenceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PreferenceTutorTbl_TutorTbl">
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="1" />
+          <End Role="PreferenceTutorTbl" Type="Self.PreferenceTutorTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TutorTbl">
+              <PropertyRef Name="TutorID" />
+            </Principal>
+            <Dependent Role="PreferenceTutorTbl">
+              <PropertyRef Name="TutorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TutorCharacterizationConstraintTbl_TutorTbl">
+          <End Role="TutorTbl" Type="Self.TutorTbl" Multiplicity="1" />
+          <End Role="TutorCharacterizationConstraintTbl" Type="Self.TutorCharacterizationConstraintTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TutorTbl">
+              <PropertyRef Name="TutorID" />
+            </Principal>
+            <Dependent Role="TutorCharacterizationConstraintTbl">
+              <PropertyRef Name="TutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SmartMatchEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ApprenticeTbl" EntityType="Self.ApprenticeTbl" />
+          <EntitySet Name="AreaTbl" EntityType="Self.AreaTbl" />
+          <EntitySet Name="CharacterizationConstraintApprenticeTbl" EntityType="Self.CharacterizationConstraintApprenticeTbl" />
+          <EntitySet Name="CharacterizationConstraintsTbl" EntityType="Self.CharacterizationConstraintsTbl" />
+          <EntitySet Name="CityTbl" EntityType="Self.CityTbl" />
+          <EntitySet Name="ConstraintTbl" EntityType="Self.ConstraintTbl" />
+          <EntitySet Name="PattrenConstaraintTbl" EntityType="Self.PattrenConstaraintTbl" />
+          <EntitySet Name="PlacementTbl" EntityType="Self.PlacementTbl" />
+          <EntitySet Name="PreferenceApprenticeTbl" EntityType="Self.PreferenceApprenticeTbl" />
+          <EntitySet Name="PreferenceTbl" EntityType="Self.PreferenceTbl" />
+          <EntitySet Name="PreferenceTutorTbl" EntityType="Self.PreferenceTutorTbl" />
+          <EntitySet Name="TutorCharacterizationConstraintTbl" EntityType="Self.TutorCharacterizationConstraintTbl" />
+          <EntitySet Name="TutorForApprenticeTbl" EntityType="Self.TutorForApprenticeTbl" />
+          <EntitySet Name="TutorTbl" EntityType="Self.TutorTbl" />
+          <EntitySet Name="UserTbl" EntityType="Self.UserTbl" />
+          <AssociationSet Name="FK_ApprenticeTbl_AreaTbl" Association="Self.FK_ApprenticeTbl_AreaTbl">
+            <End Role="AreaTbl" EntitySet="AreaTbl" />
+            <End Role="ApprenticeTbl" EntitySet="ApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApprenticeTbl_CityTbl" Association="Self.FK_ApprenticeTbl_CityTbl">
+            <End Role="CityTbl" EntitySet="CityTbl" />
+            <End Role="ApprenticeTbl" EntitySet="ApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApprenticeTbl_PlacementTbl" Association="Self.FK_ApprenticeTbl_PlacementTbl">
+            <End Role="PlacementTbl" EntitySet="PlacementTbl" />
+            <End Role="ApprenticeTbl" EntitySet="ApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterizationConstraintApprenticeTbl_ApprenticeTbl" Association="Self.FK_CharacterizationConstraintApprenticeTbl_ApprenticeTbl">
+            <End Role="ApprenticeTbl" EntitySet="ApprenticeTbl" />
+            <End Role="CharacterizationConstraintApprenticeTbl" EntitySet="CharacterizationConstraintApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreferenceApprenticeTbl_ApprenticeTbl1" Association="Self.FK_PreferenceApprenticeTbl_ApprenticeTbl1">
+            <End Role="ApprenticeTbl" EntitySet="ApprenticeTbl" />
+            <End Role="PreferenceApprenticeTbl" EntitySet="PreferenceApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AreaTbl_CityTbl" Association="Self.FK_AreaTbl_CityTbl">
+            <End Role="CityTbl" EntitySet="CityTbl" />
+            <End Role="AreaTbl" EntitySet="AreaTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorTbl_AreaTbl" Association="Self.FK_TutorTbl_AreaTbl">
+            <End Role="AreaTbl" EntitySet="AreaTbl" />
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterizationConstraintApprenticeTbl_CharacterizationConstraintsTbl" Association="Self.FK_CharacterizationConstraintApprenticeTbl_CharacterizationConstraintsTbl">
+            <End Role="CharacterizationConstraintsTbl" EntitySet="CharacterizationConstraintsTbl" />
+            <End Role="CharacterizationConstraintApprenticeTbl" EntitySet="CharacterizationConstraintApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterizationConstraintsTbl_ConstraintTbl" Association="Self.FK_CharacterizationConstraintsTbl_ConstraintTbl">
+            <End Role="ConstraintTbl" EntitySet="ConstraintTbl" />
+            <End Role="CharacterizationConstraintsTbl" EntitySet="CharacterizationConstraintsTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorCharacterizationConstraintTbl_CharacterizationConstraintsTbl" Association="Self.FK_TutorCharacterizationConstraintTbl_CharacterizationConstraintsTbl">
+            <End Role="CharacterizationConstraintsTbl" EntitySet="CharacterizationConstraintsTbl" />
+            <End Role="TutorCharacterizationConstraintTbl" EntitySet="TutorCharacterizationConstraintTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorTbl_CityTbl" Association="Self.FK_TutorTbl_CityTbl">
+            <End Role="CityTbl" EntitySet="CityTbl" />
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorTbl_CityTbl1" Association="Self.FK_TutorTbl_CityTbl1">
+            <End Role="CityTbl" EntitySet="CityTbl" />
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConstraintTbl_PlacementTbl" Association="Self.FK_ConstraintTbl_PlacementTbl">
+            <End Role="PlacementTbl" EntitySet="PlacementTbl" />
+            <End Role="ConstraintTbl" EntitySet="ConstraintTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorForApprenticeTbl_PlacementTbl" Association="Self.FK_TutorForApprenticeTbl_PlacementTbl">
+            <End Role="PlacementTbl" EntitySet="PlacementTbl" />
+            <End Role="TutorForApprenticeTbl" EntitySet="TutorForApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorForApprenticeTbl_PlacementTbl1" Association="Self.FK_TutorForApprenticeTbl_PlacementTbl1">
+            <End Role="PlacementTbl" EntitySet="PlacementTbl" />
+            <End Role="TutorForApprenticeTbl" EntitySet="TutorForApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorTbl_PlacementTbl" Association="Self.FK_TutorTbl_PlacementTbl">
+            <End Role="PlacementTbl" EntitySet="PlacementTbl" />
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreferenceApprenticeTbl_PreferenceTbl" Association="Self.FK_PreferenceApprenticeTbl_PreferenceTbl">
+            <End Role="PreferenceTbl" EntitySet="PreferenceTbl" />
+            <End Role="PreferenceApprenticeTbl" EntitySet="PreferenceApprenticeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreferenceTutorTbl_PreferenceTbl" Association="Self.FK_PreferenceTutorTbl_PreferenceTbl">
+            <End Role="PreferenceTbl" EntitySet="PreferenceTbl" />
+            <End Role="PreferenceTutorTbl" EntitySet="PreferenceTutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreferenceTutorTbl_TutorTbl" Association="Self.FK_PreferenceTutorTbl_TutorTbl">
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+            <End Role="PreferenceTutorTbl" EntitySet="PreferenceTutorTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TutorCharacterizationConstraintTbl_TutorTbl" Association="Self.FK_TutorCharacterizationConstraintTbl_TutorTbl">
+            <End Role="TutorTbl" EntitySet="TutorTbl" />
+            <End Role="TutorCharacterizationConstraintTbl" EntitySet="TutorCharacterizationConstraintTbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SmartMatchModelStoreContainer" CdmEntityContainer="SmartMatchEntities">
+          <EntitySetMapping Name="ApprenticeTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.ApprenticeTbl">
+              <MappingFragment StoreEntitySet="ApprenticeTbl">
+                <ScalarProperty Name="ApprenticeID" ColumnName="ApprenticeID" />
+                <ScalarProperty Name="ApprenticeName" ColumnName="ApprenticeName" />
+                <ScalarProperty Name="PlacementId" ColumnName="PlacementId" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ApprenticePhone" ColumnName="ApprenticePhone" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="ApprenticeAga" ColumnName="ApprenticeAga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AreaTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.AreaTbl">
+              <MappingFragment StoreEntitySet="AreaTbl">
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterizationConstraintApprenticeTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.CharacterizationConstraintApprenticeTbl">
+              <MappingFragment StoreEntitySet="CharacterizationConstraintApprenticeTbl">
+                <ScalarProperty Name="ApprenticeCharacterizationConstraintId" ColumnName="ApprenticeCharacterizationConstraintId" />
+                <ScalarProperty Name="ApprenticeId" ColumnName="ApprenticeId" />
+                <ScalarProperty Name="CharacterizationConstraintId" ColumnName="CharacterizationConstraintId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterizationConstraintsTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.CharacterizationConstraintsTbl">
+              <MappingFragment StoreEntitySet="CharacterizationConstraintsTbl">
+                <ScalarProperty Name="CharacterizationConstraintsId" ColumnName="CharacterizationConstraintsId" />
+                <ScalarProperty Name="ConstarintId" ColumnName="ConstarintId" />
+                <ScalarProperty Name="IsOpposit" ColumnName="IsOpposit" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CityTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.CityTbl">
+              <MappingFragment StoreEntitySet="CityTbl">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConstraintTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.ConstraintTbl">
+              <MappingFragment StoreEntitySet="ConstraintTbl">
+                <ScalarProperty Name="ConstraintID" ColumnName="ConstraintID" />
+                <ScalarProperty Name="ConstraintName" ColumnName="ConstraintName" />
+                <ScalarProperty Name="Placement" ColumnName="Placement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PattrenConstaraintTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.PattrenConstaraintTbl">
+              <MappingFragment StoreEntitySet="PattrenConstaraintTbl">
+                <ScalarProperty Name="ConstraintPatternId" ColumnName="ConstraintPatternId" />
+                <ScalarProperty Name="ConstarintId" ColumnName="ConstarintId" />
+                <ScalarProperty Name="ConstraintPatternType" ColumnName="ConstraintPatternType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlacementTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.PlacementTbl">
+              <MappingFragment StoreEntitySet="PlacementTbl">
+                <ScalarProperty Name="PlacementID" ColumnName="PlacementID" />
+                <ScalarProperty Name="PlacementName" ColumnName="PlacementName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="NumberOfCandidatesForApprentice" ColumnName="NumberOfCandidatesForApprentice" />
+                <ScalarProperty Name="NumberOfCandidatesForTutor" ColumnName="NumberOfCandidatesForTutor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PreferenceApprenticeTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.PreferenceApprenticeTbl">
+              <MappingFragment StoreEntitySet="PreferenceApprenticeTbl">
+                <ScalarProperty Name="PreferenceApprenticeID" ColumnName="PreferenceApprenticeID" />
+                <ScalarProperty Name="PreferenceID" ColumnName="PreferenceID" />
+                <ScalarProperty Name="ApprenticeID" ColumnName="ApprenticeID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PreferenceTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.PreferenceTbl">
+              <MappingFragment StoreEntitySet="PreferenceTbl">
+                <ScalarProperty Name="PreferenceID" ColumnName="PreferenceID" />
+                <ScalarProperty Name="PreferenceName" ColumnName="PreferenceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PreferenceTutorTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.PreferenceTutorTbl">
+              <MappingFragment StoreEntitySet="PreferenceTutorTbl">
+                <ScalarProperty Name="PreferenceForTutorID" ColumnName="PreferenceForTutorID" />
+                <ScalarProperty Name="PreferenceID" ColumnName="PreferenceID" />
+                <ScalarProperty Name="TutorID" ColumnName="TutorID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TutorCharacterizationConstraintTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.TutorCharacterizationConstraintTbl">
+              <MappingFragment StoreEntitySet="TutorCharacterizationConstraintTbl">
+                <ScalarProperty Name="TutorCharacterizationConstraintId" ColumnName="TutorCharacterizationConstraintId" />
+                <ScalarProperty Name="CharacterizationConstarintId" ColumnName="CharacterizationConstarintId" />
+                <ScalarProperty Name="TutorId" ColumnName="TutorId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TutorForApprenticeTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.TutorForApprenticeTbl">
+              <MappingFragment StoreEntitySet="TutorForApprenticeTbl">
+                <ScalarProperty Name="TutorForApprenticeId" ColumnName="TutorForApprenticeId" />
+                <ScalarProperty Name="PlacementID" ColumnName="PlacementID" />
+                <ScalarProperty Name="TutorID" ColumnName="TutorID" />
+                <ScalarProperty Name="ApprenticeID" ColumnName="ApprenticeID" />
+                <ScalarProperty Name="MatchLevelScore" ColumnName="MatchLevelScore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TutorTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.TutorTbl">
+              <MappingFragment StoreEntitySet="TutorTbl">
+                <ScalarProperty Name="TutorID" ColumnName="TutorID" />
+                <ScalarProperty Name="PlacementId" ColumnName="PlacementId" />
+                <ScalarProperty Name="TutorName" ColumnName="TutorName" />
+                <ScalarProperty Name="TutorAge" ColumnName="TutorAge" />
+                <ScalarProperty Name="TutorPhone" ColumnName="TutorPhone" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="PasswordID" ColumnName="PasswordID" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTbl">
+            <EntityTypeMapping TypeName="SmartMatchModel.UserTbl">
+              <MappingFragment StoreEntitySet="UserTbl">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
